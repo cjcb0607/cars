@@ -33,9 +33,9 @@ static information(){
   })
 }
 
-static getRank(){
+ getRank(){
   var rank = database.ref('varango');
-  rank.on("value",function(data){
+  rank.on("value",(data)=>{
    this.rank = data.val()
   });
 }

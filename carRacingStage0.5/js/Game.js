@@ -47,7 +47,7 @@ class Game {
     form.hide();
     text("listos?  YA" , 120,100)
     Player.information()
-    Player.getRank()
+    player.getRank()
 
     if (allplayers != undefined){
       // var disPos =130
@@ -60,16 +60,29 @@ class Game {
         
         cars[index].x= posx
         cars[index].y=posy
-        index ++                                 // if(index===player.index-1){
+        index ++                                 
         if(index===player.index){   
-          fill(225,246,0)             //  cars[index].shapeColor="red"
-          triangle(cars[index-1].x, cars[index-1].y+50, cars[index-1].x-20, cars[index-1].y+70, cars[index-1].x+20, cars[index-1].y+70);  //camera.position.x=windowWidth/2
-          camera.position.x=windowWidth/2       //camera.position.y=cars[index].y 
-          camera.position.y=cars[index-1].y     //  }
-        }                                      //index ++
+          fill(225,246,0)             
+          triangle(cars[index-1].x, cars[index-1].y+50, cars[index-1].x-20, cars[index-1].y+70, cars[index-1].x+20, cars[index-1].y+70); 
+          camera.position.x=windowWidth/2       
+          camera.position.y=cars[index-1].y     
+        }                                      
         
+        // if(index===player.index-1){
+          //  cars[index].shapeColor="red"
+        //camera.position.x=windowWidth/2
+        //camera.position.y=cars[index].y 
+        //  }
+        //index ++
 
-       
+
+
+
+
+
+
+
+        
         // disPos= disPos+20 
         //   if(p==="player"+player.index){
         //     fill("red");
@@ -103,11 +116,16 @@ class Game {
   end(){
     console.log('funciona');
     console.log(player.rank);
-
-
-
-
-
+    push()
+    textAlign(CENTER)
+    textSize(20)
+    textFont("Times New Roman") //font= fuente 
+    if ( player.rank === 1){
+      text("felicidades "+ player.name + "  " + player.rank+ " lugar",windowWidth/2, camera.position.y)
+    } else {
+      text(player.name + " Tu lugar es el "+player.rank,windowWidth/2, camera.position.y)
+    }
+    pop()
   }
 
   

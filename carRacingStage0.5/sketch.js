@@ -48,5 +48,6 @@ function keyPressed(){
   if(keyCode===32){
     game.update(0);
     player.updateCount(0);
+   Player.updateRank(0);
   }
 }
